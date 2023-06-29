@@ -120,7 +120,7 @@ const DealCards = ({ dealCards }: { dealCards: DealProps | undefined }) => {
           </p>
         </div>
       )} */}
-      <div className="scene w-9/12">
+      <div className="scene mb-[45.25px] w-9/12">
         <div className="grid grid-cols-5 gap-2">
           {POSITION.map((spot, index) => (
             <div key={index}>

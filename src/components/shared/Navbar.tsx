@@ -22,7 +22,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 bg-stone-600 px-2">
+    // <nav className="fixed left-0 right-0 top-0 z-50 bg-stone-600 px-2">
+    <nav className="relativez-50 bg-stone-600 px-2">
       <div className="mx-auto flex flex-wrap items-center justify-between px-4">
         <div className="relative flex w-full justify-between md:block md:w-auto lg:static lg:justify-start">
           <NavLink

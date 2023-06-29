@@ -71,7 +71,7 @@ const PlayerTwo = ({
   // ACES 11 or 1 - END
 
   return (
-    <div className="mb-2 flex justify-between px-12 lg:mb-12 tall3x:mb-28">
+    <div className="mb-[45.25px] flex justify-between px-12">
       {/* Cards */}
       <div className="flex flex-row">
         {result === null
@@ -88,7 +88,7 @@ const PlayerTwo = ({
               ))}
       </div>
       {/* Buttons */}
-      <div className="align-center flex flex-col lg:my-4">
+      <div className="align-center flex flex-col">
         {sum <= 21 ? (
           <p className="mb-auto w-40 text-center text-2xl text-white lg:text-3xl">
             {/* {sum} */}
