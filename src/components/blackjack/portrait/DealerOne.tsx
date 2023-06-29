@@ -97,7 +97,7 @@ const DealerOne = ({
 
   return (
     // <div className="my-auto grid w-full grid-flow-col grid-rows-3 gap-2">
-    <div className="grid w-full grid-flow-col grid-rows-3 gap-2">
+    <div className="mt-[45.25px] grid w-full grid-flow-col grid-rows-3 gap-2">
       <div className="row-span-2">
         <div className="flex flex-row px-12">
           {/* Card One index Zero[0] */}

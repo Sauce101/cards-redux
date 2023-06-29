@@ -96,7 +96,7 @@ const DealerTwo = ({
 
   return (
     // <div className="my-auto flex justify-between px-12">
-    <div className="flex justify-between px-12">
+    <div className="mt-[45.25px] flex justify-between px-12">
       <div className="flex justify-start">
         {/* Card one index zero[0] */}
         <div className="-mr-10 flex lg:-mr-16">
