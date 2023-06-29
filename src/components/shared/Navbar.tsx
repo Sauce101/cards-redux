@@ -16,7 +16,10 @@ export default function Navbar() {
     opacity: isActive ? 1 : 0.8,
   });
 
-  const PAGES = [{ name: 'blackjack' }, { name: 'video-poker' }];
+  const PAGES = [
+    { name: 'blackjack', game: 'Blackjack' },
+    { name: 'video-poker', game: 'Video Poker' },
+  ];
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-stone-600 px-2">
@@ -63,7 +66,7 @@ export default function Navbar() {
                 style={navLinkStyles}
                 className="items-center px-3 py-2 text-base font-medium leading-snug text-white"
               >
-                {page.name}
+                {page.game}
               </NavLink>
             ))}
           </div>
