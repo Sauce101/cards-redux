@@ -113,24 +113,17 @@ const DealCards = ({ dealCards }: { dealCards: DealProps | undefined }) => {
 
   return (
     <>
-      {/* {playFive && (
-        <div className="w-3/8 absolute top-36 z-[10] my-auto bg-[#0000bf] lg:top-52">
-          <p className="play__five p-2 text-center align-middle text-4xl font-bold text-red-700">
-            PLAY 5 CREDITS
-          </p>
-        </div>
-      )} */}
-      <div className="scene w-9/12">
+      <div className="scene mt-8 w-9/12 space-y-8">
         <div className="grid grid-cols-5 gap-2">
           {POSITION.map((spot, index) => (
             <div key={index}>
               {spot.hold ? (
-                <div className="mb-8">
+                <div className="">
                   <p>HELD</p>
                   <img src={`${spot.delt}`} alt="..." className="mt-2" />
                 </div>
               ) : (
-                <div className={`card mb-8 ${isActive ? 'is-flipped' : null}`}>
+                <div className={`card ${isActive ? 'is-flipped' : null}`}>
                   <div className="card__face card__face--front">
                     <p>&nbsp;</p>
                     <img src={spot.back} alt="..." className="mt-2" />
@@ -152,14 +145,8 @@ const DealCards = ({ dealCards }: { dealCards: DealProps | undefined }) => {
           </div>
         )}
         <div>
-          {/* <button
-            className="w-34 rounded border-4 border-b-yellow-700 border-l-yellow-600 border-r-yellow-700 bg-yellow-500 px-4 py-2 font-bold text-black hover:border-gray-500 hover:bg-yellow-400 md:w-40"
-            onClick={dealHand}
-          >
-            DEAL
-          </button> */}
           <button
-            className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
+            className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-black tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
             type="button"
             onClick={() => dealHand()}
           >

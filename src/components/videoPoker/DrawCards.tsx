@@ -83,11 +83,11 @@ const DrawCards = ({ dealCards }: { dealCards: DrawProps | undefined }) => {
   ];
 
   return (
-    <div className="scene w-9/12">
+    <div className="scene mt-8 w-9/12 space-y-8">
       <div className="grid grid-cols-5 gap-2">
         {POSITION.map((spot, index) => (
           <div
-            className={`card mx-auto mb-8 ${isActive ? 'is-flipped' : null}`}
+            className={`card mx-auto ${isActive ? 'is-flipped' : null}`}
             key={index}
           >
             {/* Redback - Front */}
@@ -116,14 +116,8 @@ const DrawCards = ({ dealCards }: { dealCards: DrawProps | undefined }) => {
       </div>
 
       <div>
-        {/* <button
-          className="w-34 rounded border-4 border-b-yellow-700 border-l-yellow-600 border-r-yellow-700 bg-yellow-500 px-4 py-2 font-bold text-black hover:border-gray-500 hover:bg-yellow-400 md:w-40"
-          onClick={() => drawHand()}
-        >
-          DRAW
-        </button> */}
         <button
-          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
+          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-black tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
           type="button"
           onClick={() => drawHand()}
         >

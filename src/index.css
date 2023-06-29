@@ -45,7 +45,7 @@
 
 .centered {
   position: absolute;
-  top: 43%;
+  top: 31%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
