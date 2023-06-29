@@ -152,11 +152,18 @@ const DealCards = ({ dealCards }: { dealCards: DealProps | undefined }) => {
           </div>
         )}
         <div>
-          <button
+          {/* <button
             className="w-34 rounded border-4 border-b-yellow-700 border-l-yellow-600 border-r-yellow-700 bg-yellow-500 px-4 py-2 font-bold text-black hover:border-gray-500 hover:bg-yellow-400 md:w-40"
             onClick={dealHand}
           >
             DEAL
+          </button> */}
+          <button
+            className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
+            type="button"
+            onClick={() => dealHand()}
+          >
+            Deal
           </button>
         </div>
       </div>

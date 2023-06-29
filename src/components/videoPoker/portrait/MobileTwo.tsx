@@ -121,7 +121,7 @@ const MobileTwo = () => {
         </div>
       )}
       {/* <div className="scene"> */}
-      <div className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
+      <div className="scene my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {POSITION.map((spot, index) => (
           <div key={index}>
             {spot.hold ? (
