@@ -60,7 +60,7 @@ const Dashboard = () => {
           <Link to="blackjack">
             <img src={blackjack} alt="blackjack" />
             <div className="flex justify-between bg-emerald-600 p-4">
-              <h2 className="text-lg lg:text-3xl">Blackjack</h2>
+              <h2 className="text-xl lg:text-3xl">Blackjack</h2>
               <div className="my-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Dashboard = () => {
           <Link to="video-poker">
             <img src={videoPoker} alt="blackjack" />
             <div className="flex justify-between bg-blue-600 p-4">
-              <h2 className="text-lg lg:text-3xl">Video Poker</h2>
+              <h2 className="text-xl lg:text-3xl">Video Poker</h2>
               <div className="my-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
