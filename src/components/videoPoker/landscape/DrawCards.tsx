@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 // actions
-import { draw } from '../../features/dealDrawSlice';
-import { rotateFalse, rotateTrue } from '../../features/rotateSlice';
+import { draw } from '../../../features/dealDrawSlice';
+import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
 import {
   holdOne,
   holdTwo,
   holdThree,
   holdFour,
   holdFive,
-} from '../../features/holdOneSlice';
+} from '../../../features/holdOneSlice';
 // card back
-import redback from '../../assets/videoPoker/images/2B.svg';
+import redback from '../../../assets/videoPoker/images/2B.svg';
 
 interface DrawProps {
   success: boolean;

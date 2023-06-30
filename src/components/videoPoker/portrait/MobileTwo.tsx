@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import {
   useDealCardsQuery,
@@ -103,9 +102,7 @@ const MobileTwo = () => {
     dispatch(deal());
   };
 
-  // const cardSizes =
-  //   '-mb-6 tall:-mb-14 rotate-90 tall:h-28 tall2x:h-32 tall3x:h-40 tall4x:h-52';
-
+  //Card size and styles
   const cardSizes =
     'tall:-mb-14 tall2x:-mb-16 rotate-90 tall:h-28 tall2x:h-36 tall3x:h-44 tall4x:h-60';
 
@@ -120,14 +117,12 @@ const MobileTwo = () => {
           </p>
         </div>
       )}
-      {/* <div className="scene"> */}
-      <div className="scene my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
+      <div className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {POSITION.map((spot, index) => (
           <div key={index}>
             {spot.hold ? (
               <div className="card mx-auto mb-8">
                 <div className="grid h-full grid-cols-3 justify-center gap-4">
-                  {/* <p>HELD</p> */}
                   <div className="my-auto">
                     <p className={cardHeldStyle}>HELD</p>
                   </div>
@@ -144,7 +139,6 @@ const MobileTwo = () => {
                 {/* Redback - Front */}
                 <div className="card__face card__face--front">
                   <div className="grid h-full grid-cols-3 justify-center gap-4">
-                    {/* <p>&nbsp;</p> */}
                     <div className="my-auto">
                       <p className={cardHeldStyle}>&nbsp;</p>
                     </div>
@@ -159,7 +153,6 @@ const MobileTwo = () => {
                 {/* Cards Face - hidden */}
                 <div className="card__face card__face--back">
                   <div className="grid h-full grid-cols-3 justify-center gap-4">
-                    {/* <p>&nbsp;</p> */}
                     <div className="my-auto">
                       <p className={cardHeldStyle}>&nbsp;</p>
                     </div>
@@ -169,7 +162,6 @@ const MobileTwo = () => {
                     <div className="my-auto">
                       <p className={cardHeldStyle}>&nbsp;</p>
                     </div>
-                    {/* </div> */}
                   </div>
                 </div>
               </div>
@@ -179,20 +171,13 @@ const MobileTwo = () => {
       </div>
       <div>
         <button
-          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
+          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-black tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
           type="button"
           onClick={() => dealHand()}
         >
           Deal
         </button>
-        {/* <button
-          className="w-34 mt-16 rounded border-4 border-b-yellow-700 border-l-yellow-600 border-r-yellow-700 bg-yellow-500 px-4 py-2 font-bold text-black hover:border-gray-500 hover:bg-yellow-400 md:w-40"
-          onClick={dealHand}
-        >
-          DEAL
-        </button> */}
       </div>
-      {/* </div> */}
     </>
   );
 };

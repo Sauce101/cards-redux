@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .scene {
-  perspective: 600px;
+  perspective: 1000px;
 }
 
 .card {
@@ -45,7 +45,7 @@
 
 .centered {
   position: absolute;
-  top: 31%;
+  top: 32%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
 }

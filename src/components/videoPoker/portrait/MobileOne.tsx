@@ -67,7 +67,7 @@ const MobileOne = () => {
     },
   ];
 
-  // -mb-6
+  // Card size and styles
   const cardSizeStyle =
     'tall:-mb-14 tall2x:-mb-16 rotate-90 tall:h-28 tall2x:h-36 tall3x:h-44 tall4x:h-60';
 
@@ -75,7 +75,7 @@ const MobileOne = () => {
 
   return (
     <>
-      <div className="scene my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
+      <div className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {POSITION.map((spot, index) => (
           <div
             className={`card mx-auto mb-8 ${isActive ? 'is-flipped' : null}`}
@@ -84,7 +84,6 @@ const MobileOne = () => {
             {/* Redback - Front */}
             <div className="card__face card__face--front">
               <div className="grid h-full grid-cols-3 justify-center gap-4">
-                {/* <p>&nbsp;</p> */}
                 <div className="my-auto">
                   {spot.hold ? (
                     <p className={cardHeldStyle}>&nbsp;</p>
@@ -111,7 +110,6 @@ const MobileOne = () => {
             </div>
             {/* Cards Face - hidden */}
             <div className="card__face card__face--back">
-              {/* {spot.hold ? <p>HELD</p> : <p>&nbsp;</p>} */}
               <div className="grid h-full grid-cols-3 justify-center gap-4">
                 <div className="my-auto">
                   {spot.hold ? (
@@ -144,18 +142,12 @@ const MobileOne = () => {
 
       <div>
         <button
-          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
+          className="click h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-black tall2x:h-10 tall2x:text-2xl tall3x:h-14 tall3x:w-60 tall3x:text-3xl tall4x:h-16 tall4x:w-80 tall4x:text-4xl"
           type="button"
           onClick={() => drawHand()}
         >
           Draw
         </button>
-        {/* <button
-          className="w-34 mt-8 rounded border-4 border-b-yellow-700 border-l-yellow-600 border-r-yellow-700 bg-yellow-500 px-4 py-2 font-bold text-black hover:border-gray-500 hover:bg-yellow-400 md:w-40"
-          onClick={() => drawHand()}
-        >
-          DRAW
-        </button> */}
       </div>
     </>
   );

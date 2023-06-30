@@ -1,25 +1,25 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { deal } from '../../features/dealDrawSlice';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { deal } from '../../../features/dealDrawSlice';
 import {
   rotateFalse,
   rotateTrue,
   fiveCredits,
   fiveCreditsFalse,
-} from '../../features/rotateSlice';
+} from '../../../features/rotateSlice';
 import {
   holdReset1,
   holdReset2,
   holdReset3,
   holdReset4,
   holdReset5,
-} from '../../features/holdOneSlice';
+} from '../../../features/holdOneSlice';
 import {
   useDealNextCardsMutation,
   useReturnCardsMutation,
   useReShuffleCardsMutation,
-} from '../../api/apiSlice';
-import redback from '../../assets/videoPoker/images/2B.svg';
+} from '../../../api/apiSlice';
+import redback from '../../../assets/videoPoker/images/2B.svg';
 
 interface DealProps {
   success: boolean;

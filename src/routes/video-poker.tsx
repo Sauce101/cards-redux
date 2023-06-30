@@ -1,11 +1,9 @@
 /* eslint-disable no-lone-blocks */
 import { useAppSelector } from '../app/hooks';
 import { useDealCardsQuery, useShuffleCardsQuery } from '../api/apiSlice';
-import DealCards from '../components/videoPoker/DealCards';
-import DrawCards from '../components/videoPoker/DrawCards';
+import DealCards from '../components/videoPoker/landscape/DealCards';
+import DrawCards from '../components/videoPoker/landscape/DrawCards';
 import payout from '../assets/videoPoker/images/payout.png';
-// import rotateScreen from '../assets/videoPoker/images/rotateScreen.png';
-// import Footer from '../components/videoPoker/Footer';
 import RetroLoading from '../components/shared/RetroLoading';
 import RetroError from '../components/shared/RetroError';
 import MobileOne from '../components/videoPoker/portrait/MobileOne';
@@ -27,7 +25,6 @@ export default function VideoPoker() {
       ) : shuffleCards ? (
         <>
           <div className="flex min-h-screen flex-col place-items-center bg-[#0000bf]	text-center font-medium text-white portrait:hidden">
-            {/* <div className="mb-8 flex flex-col place-items-center"> */}
             <div className="flex flex-col place-items-center">
               <img
                 src={payout}
@@ -42,14 +39,11 @@ export default function VideoPoker() {
                 <DealCards dealCards={dealCards} />
               )}
             </div>
-            {/* <Footer /> */}
           </div>
-          {/* Try Outs */}
           <div className="flex min-h-screen flex-col place-items-center bg-[#0000bf]	text-center font-medium text-white landscape:hidden">
             <div className="my-auto flex flex-col place-items-center">
               {dealDrawState ? <MobileOne /> : <MobileTwo />}
             </div>
-            {/* <Footer /> */}
           </div>{' '}
         </>
       ) : null}
