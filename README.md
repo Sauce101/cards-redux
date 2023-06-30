@@ -9,7 +9,7 @@
 <h2>By: Michael Saucedo</h2>
 <br />
 
-This React project was made with Redux Toolkit and React Router. I used two of my previous games and made them work together in a single webpage. You can also install this as a mobile or tablet device as an app. Thank you and I hope you like it. [Visit Site](https://cardsredux.netlify.app/)
+This React project was made with Redux Toolkit and React Router. I used two of my previous games and made them work together in a single webpage. You can also install this on a mobile device as an app. Thank you and I hope you like it. [Visit Site](https://cardsredux.netlify.app/)
 
 ## 🧐 What's inside?
 
