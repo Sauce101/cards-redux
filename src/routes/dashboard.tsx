@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div className="mx-auto w-4/5">
           <Link to="blackjack">
             <img src={blackjack} alt="blackjack" />
-            <div className="flex justify-between bg-emerald-600 p-4">
+            <div className="flex justify-between bg-emerald-600 px-4 py-1">
               <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
               <div className="my-auto">
                 <svg
@@ -33,7 +33,7 @@ const Dashboard = () => {
         <div className="mx-auto w-4/5">
           <Link to="video-poker">
             <img src={videoPoker} alt="blackjack" />
-            <div className="flex justify-between bg-blue-600 p-4">
+            <div className="flex justify-between bg-blue-600 px-4 py-1">
               <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
               <div className="my-auto">
                 <svg
@@ -59,7 +59,7 @@ const Dashboard = () => {
         <div className="mx-auto w-2/5">
           <Link to="blackjack">
             <img src={blackjack} alt="blackjack" />
-            <div className="flex justify-between bg-emerald-600 p-4">
+            <div className="flex justify-between bg-emerald-600 px-4 py-1">
               <h2 className="text-xl lg:text-3xl">Blackjack</h2>
               <div className="my-auto">
                 <svg
@@ -81,7 +81,7 @@ const Dashboard = () => {
         <div className="mx-auto w-2/5">
           <Link to="video-poker">
             <img src={videoPoker} alt="blackjack" />
-            <div className="flex justify-between bg-blue-600 p-4">
+            <div className="flex justify-between bg-blue-600 px-4 py-1">
               <h2 className="text-xl lg:text-3xl">Video Poker</h2>
               <div className="my-auto">
                 <svg
