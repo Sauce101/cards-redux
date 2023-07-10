@@ -13,5 +13,8 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/no-explicit-any': 0,
     'react-hooks/exhaustive-deps': 0,
+    'no-undef': 0,
+    // prettier
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 };

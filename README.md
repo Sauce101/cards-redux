@@ -13,7 +13,7 @@ This React project was made with Redux Toolkit and React Router. I used two of m
 
 ## 🧐 What's inside?
 
-A quick look at the pages you'll see in this React with Tailwind project. All playing cards are from an entire deck of pre shuffled cards from an API website. More card games to be added in the future.
+A quick look at the pages you'll see in this React with Tailwind project. All playing cards are from an API website. The cards are shuffled and delt with each new game or hand. More card games to be added in the future.
 
 1.  **`/blackjack`**: Blackjack
     &emsp;<p>Play blackjack as both the dealer and player. Dealer must hit on 17 or less. Aces are automatically calculated for you.</p>
