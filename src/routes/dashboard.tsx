@@ -60,13 +60,13 @@ const Dashboard = () => {
           <Link to="blackjack">
             <img src={blackjack} alt="blackjack" />
             <div className="flex justify-between bg-emerald-600 px-4 py-1">
-              <h2 className="text-xl lg:text-3xl">Blackjack</h2>
+              <h2 className="my-auto text-xl lg:text-3xl">Blackjack</h2>
               <div className="my-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12"
+                  className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"
                 >
                   <path
                     fillRule="evenodd"
@@ -82,13 +82,13 @@ const Dashboard = () => {
           <Link to="video-poker">
             <img src={videoPoker} alt="blackjack" />
             <div className="flex justify-between bg-blue-600 px-4 py-1">
-              <h2 className="text-xl lg:text-3xl">Video Poker</h2>
+              <h2 className="my-auto text-xl lg:text-3xl">Video Poker</h2>
               <div className="my-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12"
+                  className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"
                 >
                   <path
                     fillRule="evenodd"
