@@ -9,11 +9,11 @@ const Dashboard = () => {
       {/* Portrait */}
       <div className="my-auto flex flex-col justify-center gap-8 text-white landscape:hidden">
         <div className="mx-auto w-4/5">
-          <Link to="blackjack">
-            <img src={blackjack} alt="blackjack" />
-            <div className="flex justify-between bg-emerald-600 px-4 py-1">
-              <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
-              <div className="my-auto">
+          <img src={blackjack} alt="blackjack" />
+          <div className="flex justify-between bg-emerald-600 px-4 py-1">
+            <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
+            <div className="my-auto">
+              <Link to="blackjack">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -26,16 +26,16 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
         <div className="mx-auto w-4/5">
-          <Link to="video-poker">
-            <img src={videoPoker} alt="blackjack" />
-            <div className="flex justify-between bg-blue-600 px-4 py-1">
-              <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
-              <div className="my-auto">
+          <img src={videoPoker} alt="blackjack" />
+          <div className="flex justify-between bg-blue-600 px-4 py-1">
+            <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
+            <div className="my-auto">
+              <Link to="video-poker">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -48,9 +48,9 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
         <Footer />
       </div>
@@ -58,10 +58,10 @@ const Dashboard = () => {
       <div className="flex-col-2 my-auto flex justify-evenly text-white portrait:hidden">
         <div className="mx-auto w-2/5">
           <img src={blackjack} alt="blackjack" />
-          <Link to="blackjack">
-            <div className="flex justify-between bg-emerald-600 px-4 py-1">
-              <h2 className="my-auto text-xl lg:text-3xl">Blackjack</h2>
-              <div className="my-auto">
+          <div className="flex justify-between bg-emerald-600 px-4 py-1">
+            <h2 className="my-auto text-xl lg:text-3xl">Blackjack</h2>
+            <div className="my-auto">
+              <Link to="blackjack">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -74,16 +74,16 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
         <div className="mx-auto w-2/5">
           <img src={videoPoker} alt="blackjack" />
-          <Link to="video-poker">
-            <div className="flex justify-between bg-blue-600 px-4 py-1">
-              <h2 className="my-auto text-xl lg:text-3xl">Video Poker</h2>
-              <div className="my-auto">
+          <div className="flex justify-between bg-blue-600 px-4 py-1">
+            <h2 className="my-auto text-xl lg:text-3xl">Video Poker</h2>
+            <div className="my-auto">
+              <Link to="video-poker">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -96,9 +96,9 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
         <Footer />
       </div>
