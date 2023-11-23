@@ -57,8 +57,8 @@ const Dashboard = () => {
       {/* Landscape */}
       <div className="flex-col-2 my-auto flex justify-evenly text-white portrait:hidden">
         <div className="mx-auto w-2/5">
+          <img src={blackjack} alt="blackjack" />
           <Link to="blackjack">
-            <img src={blackjack} alt="blackjack" />
             <div className="flex justify-between bg-emerald-600 px-4 py-1">
               <h2 className="my-auto text-xl lg:text-3xl">Blackjack</h2>
               <div className="my-auto">
@@ -79,8 +79,8 @@ const Dashboard = () => {
           </Link>
         </div>
         <div className="mx-auto w-2/5">
+          <img src={videoPoker} alt="blackjack" />
           <Link to="video-poker">
-            <img src={videoPoker} alt="blackjack" />
             <div className="flex justify-between bg-blue-600 px-4 py-1">
               <h2 className="my-auto text-xl lg:text-3xl">Video Poker</h2>
               <div className="my-auto">
