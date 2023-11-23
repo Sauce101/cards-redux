@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import blackjack from '../assets/dashboard/blackjack.jpg';
 import videoPoker from '../assets/dashboard/videoPoker.jpg';
 import Footer from '../components/shared/Footer';
@@ -8,7 +9,17 @@ const Dashboard = () => {
     <div className="flex min-h-screen flex-col  place-items-center bg-slate-800">
       {/* Portrait */}
       <div className="my-auto flex flex-col justify-center gap-8 text-white landscape:hidden">
-        <div className="mx-auto w-4/5">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 125,
+            delay: 0.1,
+            duration: 0.7,
+          }}
+          className="mx-auto w-4/5"
+        >
           <img src={blackjack} alt="blackjack" />
           <div className="flex justify-between bg-emerald-600 px-4 py-1">
             <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
@@ -29,8 +40,18 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="mx-auto w-4/5">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 125,
+            delay: 0.1,
+            duration: 0.7,
+          }}
+          className="mx-auto w-4/5"
+        >
           <img src={videoPoker} alt="blackjack" />
           <div className="flex justify-between bg-blue-600 px-4 py-1">
             <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
@@ -51,12 +72,22 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
         <Footer />
       </div>
       {/* Landscape */}
       <div className="flex-col-2 my-auto flex justify-evenly text-white portrait:hidden">
-        <div className="mx-auto w-2/5">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 125,
+            delay: 0.1,
+            duration: 0.7,
+          }}
+          className="mx-auto w-2/5"
+        >
           <img src={blackjack} alt="blackjack" />
           <div className="flex justify-between bg-emerald-600 px-4 py-1">
             <h2 className="my-auto text-xl lg:text-3xl">Blackjack</h2>
@@ -77,8 +108,18 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="mx-auto w-2/5">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 125,
+            delay: 0.1,
+            duration: 0.7,
+          }}
+          className="mx-auto w-2/5"
+        >
           <img src={videoPoker} alt="blackjack" />
           <div className="flex justify-between bg-blue-600 px-4 py-1">
             <h2 className="my-auto text-xl lg:text-3xl">Video Poker</h2>
@@ -99,7 +140,7 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
         <Footer />
       </div>
     </div>
