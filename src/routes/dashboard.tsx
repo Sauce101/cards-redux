@@ -13,9 +13,8 @@ const Dashboard = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            type: 'spring',
-            stiffness: 125,
-            delay: 0.1,
+            type: 'tween',
+            delay: 0.3,
             duration: 0.7,
           }}
           className="mx-auto w-4/5"
@@ -45,9 +44,8 @@ const Dashboard = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            type: 'spring',
-            stiffness: 125,
-            delay: 0.1,
+            type: 'tween',
+            delay: 0.5,
             duration: 0.7,
           }}
           className="mx-auto w-4/5"
@@ -81,9 +79,8 @@ const Dashboard = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            type: 'spring',
-            stiffness: 125,
-            delay: 0.1,
+            type: 'tween',
+            delay: 0.3,
             duration: 0.7,
           }}
           className="mx-auto w-2/5"
@@ -113,9 +110,8 @@ const Dashboard = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            type: 'spring',
-            stiffness: 125,
-            delay: 0.1,
+            type: 'tween',
+            delay: 0.5,
             duration: 0.7,
           }}
           className="mx-auto w-2/5"
