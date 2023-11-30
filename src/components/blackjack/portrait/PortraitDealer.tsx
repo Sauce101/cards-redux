@@ -18,11 +18,8 @@ interface CardProps {
 interface BlackJackProps {
   result: any;
   cardCount: number;
-  // setCardCount: React.Dispatch<React.SetStateAction<number>>;
   cardValue: string[];
-  // setShuffle: React.Dispatch<React.SetStateAction<boolean>>;
   stand: boolean;
-  // setStand: React.Dispatch<React.SetStateAction<boolean>>;
   refetch: any;
   dispatch: any;
   handleDealerIncrement: any;
@@ -39,14 +36,8 @@ const PortraitDealer = ({
   cardCount,
   cardMax,
 }: BlackJackProps) => {
-  // DealerOne
-  // const [cardMax, setCardMax] = useState<number>(0);
   let sum = 0;
   let sum2 = 0;
-
-  // const handleIncrement = () => {
-  //   setCardMax((prevCount) => prevCount + 1);
-  // };
 
   const shuffleDeal = () => {
     dispatch(shuffleToggle());

@@ -33,7 +33,6 @@ const LandscapePlayer = ({
   handleIncrement,
   dispatch,
 }: BlackJackProps) => {
-  // PlayerTwo landscape
   let sum = 0;
 
   const handleStand = () => {
@@ -78,7 +77,6 @@ const LandscapePlayer = ({
         src={item.image}
         alt={item.code}
         key={item.code}
-        // className="z-30 -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72"
         className="h-32 lg:h-52 tall3x:h-72"
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -97,7 +95,6 @@ const LandscapePlayer = ({
         src={item.image}
         alt={item.code}
         key={item.code}
-        // className="z-30 -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72"
         className="h-32 lg:h-52 tall3x:h-72"
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -118,7 +115,6 @@ const LandscapePlayer = ({
           src={item.image}
           alt={item.code}
           key={item.code}
-          // className="z-30 -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72"
           className="h-32 lg:h-52 tall3x:h-72"
           initial={{ opacity: 0, scale: 1.3 }}
           animate={{ opacity: 1, scale: 1 }}
