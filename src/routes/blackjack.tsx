@@ -1,19 +1,23 @@
 // RTK Query
 import { useDealCardsQuery } from '../api/blackjackSlice';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { increment } from '../features/blackjack/blackjackSlice';
+import {
+  increment,
+  dealerIncrement,
+} from '../features/blackjack/blackjackSlice';
 import RetroLoading from '../components/shared/RetroLoading';
 import RetroError from '../components/shared/RetroError';
 // Components
-import DealerOne from '../components/blackjack/portrait/DealerOne';
-import PlayerOne from '../components/blackjack/portrait/PlayerOne';
-import DealerTwo from '../components/blackjack/landscape/DealerTwo';
-import PlayerTwo from '../components/blackjack/landscape/PlayerTwo';
+import PortraitDealer from '../components/blackjack/portrait/PortraitDealer';
+import PortraitPlayer from '../components/blackjack/portrait/PortraitPlayer';
+import LandscapeDealer from '../components/blackjack/landscape/LandscapeDealer';
+import LandscapePlayer from '../components/blackjack/landscape/LandscapePlayer';
 
 const BlackJack = () => {
   // RTK
   const { data: result, refetch, error, isLoading } = useDealCardsQuery();
   const cardCount = useAppSelector((state) => state.blackjack.count);
+  const cardMax = useAppSelector((state) => state.blackjack.cardMax);
   const stand = useAppSelector((state) => state.blackjack.stand);
   const dispatch = useAppDispatch();
   const url: any = result;
@@ -35,6 +39,9 @@ const BlackJack = () => {
   const handleIncrement = () => {
     dispatch(increment());
   };
+  const handleDealerIncrement = () => {
+    dispatch(dealerIncrement());
+  };
 
   return (
     <div>
@@ -45,40 +52,44 @@ const BlackJack = () => {
       ) : result ? (
         <>
           <div className="flex min-h-screen flex-col justify-evenly bg-green-900 landscape:hidden">
-            <DealerOne
+            <PortraitDealer
+              refetch={refetch}
               result={result}
               cardValue={cardValue}
-              stand={stand}
-              refetch={refetch}
-              dispatch={dispatch}
               cardCount={cardCount}
+              stand={stand}
+              dispatch={dispatch}
+              handleDealerIncrement={handleDealerIncrement}
+              cardMax={cardMax}
             />
-            <PlayerOne
+            <PortraitPlayer
+              refetch={refetch}
               result={result}
               cardValue={cardValue}
-              stand={stand}
-              refetch={refetch}
-              handleIncrement={handleIncrement}
-              dispatch={dispatch}
               cardCount={cardCount}
+              handleIncrement={handleIncrement}
+              stand={stand}
+              dispatch={dispatch}
             />
           </div>
           <div className="flex min-h-screen flex-col justify-evenly bg-green-900 portrait:hidden">
-            <DealerTwo
+            <LandscapeDealer
+              refetch={refetch}
               result={result}
               cardValue={cardValue}
-              stand={stand}
               cardCount={cardCount}
-              refetch={refetch}
+              stand={stand}
               dispatch={dispatch}
+              handleDealerIncrement={handleDealerIncrement}
+              cardMax={cardMax}
             />
-            <PlayerTwo
+            <LandscapePlayer
+              refetch={refetch}
               result={result}
               cardValue={cardValue}
-              stand={stand}
               cardCount={cardCount}
-              refetch={refetch}
               handleIncrement={handleIncrement}
+              stand={stand}
               dispatch={dispatch}
             />
           </div>

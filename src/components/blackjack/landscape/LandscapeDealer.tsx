@@ -1,9 +1,11 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useMemo, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import DealerTwoModal from '../modals/DealerTwoModal';
 import redMaze from '../../../assets/blackjack/images/redMaze.svg';
 import {
   newDeal,
   newStand,
+  playerStand,
   shuffleToggle,
 } from '../../../features/blackjack/blackjackSlice';
 
@@ -16,45 +18,34 @@ interface CardProps {
 interface BlackJackProps {
   result: any;
   cardCount: number;
-  // setCardCount: React.Dispatch<React.SetStateAction<number>>;
   cardValue: string[];
-  // setShuffle: React.Dispatch<React.SetStateAction<boolean>>;
   stand: boolean;
-  // setStand: React.Dispatch<React.SetStateAction<boolean>>;
   refetch: any;
   dispatch: any;
+  cardMax: number;
+  handleDealerIncrement: any;
 }
 
-const DealerTwo = ({
+const LandscapeDealer = ({
   result,
   cardValue,
   cardCount,
-  // setCardCount,
-  // setShuffle,
-  // setStand,
+  handleDealerIncrement,
   stand,
   refetch,
   dispatch,
+  cardMax,
 }: BlackJackProps) => {
-  // DealerTwo
-  const [cardMax, setCardMax] = useState<number>(0);
   let sum = 0;
   let sum2 = 0;
 
-  const handleIncrement = () => {
-    setCardMax((prevCount) => prevCount + 1);
-  };
-
   const shuffleDeal = () => {
-    // setShuffle((prevShuffle) => !prevShuffle);
     dispatch(shuffleToggle());
-    // setStand(false);
-    setCardMax(0);
     dispatch(newDeal());
   };
 
   useEffect(() => {
-    setCardMax(cardCount);
+    dispatch(playerStand());
   }, [stand]);
 
   useMemo(
@@ -94,57 +85,88 @@ const DealerTwo = ({
   }, [cardCount, cardMax, cardsDrawn]);
   // ACES 11 or 1 - END
 
+  const secondCard = result.cards.slice(1, 2).map((item: CardProps) => (
+    <li className="z-20 -mr-10 lg:-mr-16">
+      <motion.img
+        src={item.image}
+        alt={item.code}
+        key={item.code}
+        className="h-32 lg:h-52 tall3x:h-72"
+        initial={{ opacity: 0, scale: 1.3 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: 'tween',
+          delay: 0.6,
+          duration: 0.3,
+        }}
+      />
+    </li>
+  ));
+
+  const remainingCards = result.cards
+    .slice(cardCount, cardMax)
+    .map((item: CardProps) => (
+      <li className="z-30 -mr-10 lg:-mr-16">
+        <motion.img
+          src={item.image}
+          alt={item.code}
+          key={item.code}
+          className="h-32 lg:h-52 tall3x:h-72"
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'tween',
+            delay: 0.4,
+            duration: 0.3,
+          }}
+        />
+      </li>
+    ));
+
   return (
-    // <div className="my-auto flex justify-between px-12">
     <div className="mt-[45.25px] flex justify-between px-12">
       <div className="flex justify-start">
         {/* Card one index zero[0] */}
         <div className="-mr-10 flex lg:-mr-16">
-          <img
+          <motion.img
             src={redMaze}
             alt="..."
             className="z-0 h-32 lg:h-52 tall3x:h-72"
+            initial={{ opacity: 0, scale: 0.3 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: 'tween',
+              delay: 0.2,
+              duration: 0.3,
+            }}
           />
           {stand &&
-            result.cards
-              .slice(0, 1)
-              .map((item: CardProps) => (
-                <img
-                  src={item.image}
-                  alt={item.code}
-                  key={item.code}
-                  className={`absolute -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72 ${
-                    stand && 'z-10'
-                  }`}
-                />
-              ))}
+            result.cards.slice(0, 1).map((item: CardProps) => (
+              <motion.img
+                src={item.image}
+                alt={item.code}
+                key={item.code}
+                className={`absolute -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72 ${
+                  stand && 'z-10'
+                }`}
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  type: 'tween',
+                  delay: 0.3,
+                  duration: 0.3,
+                }}
+              />
+            ))}
         </div>
         {/* Card two index one[1] */}
-        {result === null
-          ? 'loading'
-          : result.cards
-              .slice(1, 2)
-              .map((item: CardProps) => (
-                <img
-                  src={item.image}
-                  alt={item.code}
-                  key={item.code}
-                  className="z-20 -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72"
-                />
-              ))}
+        {result === null ? (
+          'loading'
+        ) : (
+          <ul className="flex flex-row">{secondCard}</ul>
+        )}
         {/* Drawn Cards */}
-        {stand
-          ? result.cards
-              .slice(cardCount, cardMax)
-              .map((item: CardProps) => (
-                <img
-                  src={item.image}
-                  alt={item.code}
-                  key={item.code}
-                  className="z-30 -mr-10 h-32 lg:-mr-16 lg:h-52 tall3x:h-72"
-                />
-              ))
-          : null}
+        {stand ? <ul className="flex flex-row">{remainingCards}</ul> : null}
       </div>
 
       {/* Buttons */}
@@ -160,7 +182,7 @@ const DealerTwo = ({
           <button
             className="click mt-auto h-8 w-40 self-center rounded bg-yellow-500 px-4 font-bold text-white"
             type="button"
-            onClick={handleIncrement}
+            onClick={handleDealerIncrement}
           >
             Must Hit
           </button>
@@ -169,9 +191,7 @@ const DealerTwo = ({
           <button
             className="click mt-auto h-8 w-40 self-center rounded bg-green-700 px-4 font-bold text-white hover:bg-green-700"
             type="button"
-            // onClick={shuffleDeal}
             onClick={() => {
-              // setStand(false);
               dispatch(newStand());
               refetch();
               setTimeout(shuffleDeal, 400);
@@ -184,4 +204,4 @@ const DealerTwo = ({
     </div>
   );
 };
-export default DealerTwo;
+export default LandscapeDealer;
