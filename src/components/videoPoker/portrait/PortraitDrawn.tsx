@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
   useDealCardsQuery,
   useDealNextCardsMutation,
@@ -8,12 +7,6 @@ import {
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 import { deal } from '../../../features/dealDrawSlice';
-import {
-  rotateFalse,
-  rotateTrue,
-  fiveCredits,
-  fiveCreditsFalse,
-} from '../../../features/rotateSlice';
 import {
   holdReset1,
   holdReset2,
@@ -32,10 +25,6 @@ const PortraitDrawn = () => {
   const [returnCards] = useReturnCardsMutation();
   const [reShuffle] = useReShuffleCardsMutation();
   const [dealNext] = useDealNextCardsMutation();
-  // card State
-  const isActive = useAppSelector((state) => state.rotate.value);
-  const playFive = useAppSelector((state) => state.rotate.credits);
-
   // hold State
   const holdState1 = useAppSelector((state) => state.holdCardOne.toggleHold1);
   const holdState2 = useAppSelector((state) => state.holdCardOne.toggleHold2);
@@ -49,50 +38,37 @@ const PortraitDrawn = () => {
       hold: holdState1,
       delt: mobileCards?.cards[0].image,
       drawn: mobileCards?.cards[5].image,
-      back: redback,
+      // back: redback,
     },
     {
       delay: 0.6,
       hold: holdState2,
       delt: mobileCards?.cards[1].image,
       drawn: mobileCards?.cards[6].image,
-      back: redback,
+      // back: redback,
     },
     {
       delay: 0.7,
       hold: holdState3,
       delt: mobileCards?.cards[2].image,
       drawn: mobileCards?.cards[7].image,
-      back: redback,
+      // back: redback,
     },
     {
       delay: 0.8,
       hold: holdState4,
       delt: mobileCards?.cards[3].image,
       drawn: mobileCards?.cards[8].image,
-      back: redback,
+      // back: redback,
     },
     {
       delay: 0.9,
       hold: holdState5,
       delt: mobileCards?.cards[4].image,
       drawn: mobileCards?.cards[9].image,
-      back: redback,
+      // back: redback,
     },
   ];
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(rotateTrue());
-    }, 250);
-    return () => clearTimeout(timer);
-  }, []);
-  useEffect(() => {
-    const timer2 = setTimeout(() => {
-      dispatch(fiveCredits());
-    }, 800);
-    return () => clearTimeout(timer2);
-  }, []);
 
   const dealHand = () => {
     dealNext();
@@ -103,8 +79,6 @@ const PortraitDrawn = () => {
     dispatch(holdReset3());
     dispatch(holdReset4());
     dispatch(holdReset5());
-    dispatch(rotateFalse());
-    dispatch(fiveCreditsFalse());
     dispatch(deal());
   };
 
@@ -139,7 +113,7 @@ const PortraitDrawn = () => {
           </div>
         </div>
       ) : (
-        <div className={`card mb-8 ${isActive ? 'is-flipped' : null}`}>
+        <div className="card mb-8">
           {/* Redback - Front */}
           <div className="card__face card__face--front">
             <div className="grid h-full grid-cols-3 justify-center gap-4">
@@ -147,7 +121,7 @@ const PortraitDrawn = () => {
                 <p className={cardHeldStyle}>&nbsp;</p>
               </div>
               <div>
-                <img src={spot.back} alt="..." className={cardSizes} />
+                <img src={redback} alt="..." className={cardSizes} />
               </div>
               <div className="my-auto">
                 <p className={cardHeldStyle}>&nbsp;</p>
@@ -180,22 +154,20 @@ const PortraitDrawn = () => {
 
   return (
     <>
-      {playFive && (
-        <motion.div
-          className="fixed"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            type: 'tween',
-            delay: 0.5,
-            duration: 0.2,
-          }}
-        >
-          <p className="play__five p-2 text-center text-4xl font-bold text-red-700 tall3x:text-5xl tall4x:text-6xl">
-            PLAY 5 CREDITS
-          </p>
-        </motion.div>
-      )}
+      <motion.div
+        className="fixed"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: 'tween',
+          delay: 1.3,
+          duration: 0.2,
+        }}
+      >
+        <p className="play__five p-2 text-center text-4xl font-bold text-red-700 tall3x:text-5xl tall4x:text-6xl">
+          PLAY 5 CREDITS
+        </p>
+      </motion.div>
 
       <ul className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {drawnCards}
