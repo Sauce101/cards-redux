@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import {
   useDealCardsQuery,
   useDealNextCardsMutation,
@@ -8,12 +8,12 @@ import {
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 import { deal } from '../../../features/dealDrawSlice';
-import {
-  rotateFalse,
-  rotateTrue,
-  fiveCredits,
-  fiveCreditsFalse,
-} from '../../../features/rotateSlice';
+// import {
+//   rotateFalse,
+//   rotateTrue,
+//   fiveCredits,
+//   fiveCreditsFalse,
+// } from '../../../features/rotateSlice';
 import {
   holdReset1,
   holdReset2,
@@ -81,18 +81,18 @@ const PortraitDrawn = () => {
     },
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(rotateTrue());
-    }, 250);
-    return () => clearTimeout(timer);
-  }, []);
-  useEffect(() => {
-    const timer2 = setTimeout(() => {
-      dispatch(fiveCredits());
-    }, 800);
-    return () => clearTimeout(timer2);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     dispatch(rotateTrue());
+  //   }, 250);
+  //   return () => clearTimeout(timer);
+  // }, []);
+  // useEffect(() => {
+  //   const timer2 = setTimeout(() => {
+  //     dispatch(fiveCredits());
+  //   }, 800);
+  //   return () => clearTimeout(timer2);
+  // }, []);
 
   const dealHand = () => {
     dealNext();
@@ -103,8 +103,8 @@ const PortraitDrawn = () => {
     dispatch(holdReset3());
     dispatch(holdReset4());
     dispatch(holdReset5());
-    dispatch(rotateFalse());
-    dispatch(fiveCreditsFalse());
+    // dispatch(rotateFalse());
+    // dispatch(fiveCreditsFalse());
     dispatch(deal());
   };
 
@@ -180,22 +180,22 @@ const PortraitDrawn = () => {
 
   return (
     <>
-      {playFive && (
-        <motion.div
-          className="fixed"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            type: 'tween',
-            delay: 0.5,
-            duration: 0.2,
-          }}
-        >
-          <p className="play__five p-2 text-center text-4xl font-bold text-red-700 tall3x:text-5xl tall4x:text-6xl">
-            PLAY 5 CREDITS
-          </p>
-        </motion.div>
-      )}
+      {/* {playFive && ( */}
+      <motion.div
+        className="fixed"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: 'tween',
+          delay: 1.3,
+          duration: 0.2,
+        }}
+      >
+        <p className="play__five p-2 text-center text-4xl font-bold text-red-700 tall3x:text-5xl tall4x:text-6xl">
+          PLAY 5 CREDITS
+        </p>
+      </motion.div>
+      {/* )} */}
 
       <ul className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {drawnCards}

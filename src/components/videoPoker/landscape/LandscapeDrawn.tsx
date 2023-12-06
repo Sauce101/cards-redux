@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { deal } from '../../../features/dealDrawSlice';
-import {
-  rotateFalse,
-  rotateTrue,
-  fiveCredits,
-  fiveCreditsFalse,
-} from '../../../features/rotateSlice';
+// import {
+//   // rotateFalse,
+//   // rotateTrue,
+//   fiveCredits,
+//   fiveCreditsFalse,
+// } from '../../../features/rotateSlice';
 import {
   holdReset1,
   holdReset2,
@@ -47,7 +47,7 @@ const LandscapeDrawn = ({
   const [dealNext] = useDealNextCardsMutation();
   // card State
   const isActive = useAppSelector((state) => state.rotate.value);
-  const playFive = useAppSelector((state) => state.rotate.credits);
+  // const playFive = useAppSelector((state) => state.rotate.credits);
 
   // hold State
   const holdState1 = useAppSelector((state) => state.holdCardOne.toggleHold1);
@@ -94,18 +94,18 @@ const LandscapeDrawn = ({
     },
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(rotateTrue());
-    }, 250);
-    return () => clearTimeout(timer);
-  }, [dispatch]);
-  useEffect(() => {
-    const timer2 = setTimeout(() => {
-      dispatch(fiveCredits());
-    }, 800);
-    return () => clearTimeout(timer2);
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     dispatch(rotateTrue());
+  //   }, 250);
+  //   return () => clearTimeout(timer);
+  // }, [dispatch]);
+  // useEffect(() => {
+  //   const timer2 = setTimeout(() => {
+  //     dispatch(fiveCredits());
+  //   }, 800);
+  //   return () => clearTimeout(timer2);
+  // }, [dispatch]);
 
   const dealHand = () => {
     dealNext();
@@ -116,8 +116,8 @@ const LandscapeDrawn = ({
     dispatch(holdReset3());
     dispatch(holdReset4());
     dispatch(holdReset5());
-    dispatch(rotateFalse());
-    dispatch(fiveCreditsFalse());
+    // dispatch(rotateFalse());
+    // dispatch(fiveCreditsFalse());
     dispatch(deal());
   };
 
@@ -163,22 +163,22 @@ const LandscapeDrawn = ({
       <div className="scene mt-8 w-9/12 space-y-8">
         <div>
           <ul className="grid grid-cols-5 gap-2">{drawnCards}</ul>
-          {playFive && (
-            <div className="w-3/8 centeredB">
-              <motion.p
-                className="play__five bg-[#0000bf] p-2 text-center align-middle text-3xl font-bold text-red-700 md:text-4xl"
-                initial={{ opacity: 0, scale: 1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  type: 'tween',
-                  delay: 0.6,
-                  // duration: 0.2,
-                }}
-              >
-                PLAY 5 CREDITS
-              </motion.p>
-            </div>
-          )}
+          {/* {playFive && ( */}
+          <div className="w-3/8 centeredB">
+            <motion.p
+              className="play__five bg-[#0000bf] p-2 text-center align-middle text-3xl font-bold text-red-700 md:text-4xl"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                type: 'tween',
+                delay: 1.5,
+                // duration: 0.2,
+              }}
+            >
+              PLAY 5 CREDITS
+            </motion.p>
+          </div>
+          {/* )} */}
         </div>
 
         <div>

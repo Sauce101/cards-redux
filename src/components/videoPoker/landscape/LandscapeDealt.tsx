@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 // actions
 import { draw } from '../../../features/dealDrawSlice';
-import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
+// import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
 import {
   holdOne,
   holdTwo,
@@ -42,16 +42,16 @@ const LanndscapeDealt = ({
   const holdState4 = useAppSelector((state) => state.holdCardOne.toggleHold4);
   const holdState5 = useAppSelector((state) => state.holdCardOne.toggleHold5);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(rotateTrue());
-    }, 400);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     dispatch(rotateTrue());
+  //   }, 400);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const drawHand = () => {
     dispatch(draw());
-    dispatch(rotateFalse());
+    // dispatch(rotateFalse());
   };
 
   const POSITION = [

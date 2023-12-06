@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useDealCardsQuery } from '../../../api/apiSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 // actions
 import { draw } from '../../../features/dealDrawSlice';
-import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
+// import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
 import {
   holdOne,
   holdTwo,
@@ -28,16 +28,16 @@ const PortraitDealt = () => {
   const holdState4 = useAppSelector((state) => state.holdCardOne.toggleHold4);
   const holdState5 = useAppSelector((state) => state.holdCardOne.toggleHold5);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      dispatch(rotateTrue());
-    }, 400);
-    return () => clearTimeout(timer);
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     dispatch(rotateTrue());
+  //   }, 400);
+  //   return () => clearTimeout(timer);
+  // }, [dispatch]);
 
   const drawHand = () => {
     dispatch(draw());
-    dispatch(rotateFalse());
+    // dispatch(rotateFalse());
   };
 
   const POSITION = [
