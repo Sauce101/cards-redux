@@ -1,13 +1,6 @@
-// import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { deal } from '../../../features/dealDrawSlice';
-// import {
-//   // rotateFalse,
-//   // rotateTrue,
-//   fiveCredits,
-//   fiveCreditsFalse,
-// } from '../../../features/rotateSlice';
 import {
   holdReset1,
   holdReset2,
@@ -45,10 +38,6 @@ const LandscapeDrawn = ({
   const [returnCards] = useReturnCardsMutation();
   const [reShuffle] = useReShuffleCardsMutation();
   const [dealNext] = useDealNextCardsMutation();
-  // card State
-  const isActive = useAppSelector((state) => state.rotate.value);
-  // const playFive = useAppSelector((state) => state.rotate.credits);
-
   // hold State
   const holdState1 = useAppSelector((state) => state.holdCardOne.toggleHold1);
   const holdState2 = useAppSelector((state) => state.holdCardOne.toggleHold2);
@@ -94,19 +83,6 @@ const LandscapeDrawn = ({
     },
   ];
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     dispatch(rotateTrue());
-  //   }, 250);
-  //   return () => clearTimeout(timer);
-  // }, [dispatch]);
-  // useEffect(() => {
-  //   const timer2 = setTimeout(() => {
-  //     dispatch(fiveCredits());
-  //   }, 800);
-  //   return () => clearTimeout(timer2);
-  // }, [dispatch]);
-
   const dealHand = () => {
     dealNext();
     returnCards();
@@ -116,8 +92,6 @@ const LandscapeDrawn = ({
     dispatch(holdReset3());
     dispatch(holdReset4());
     dispatch(holdReset5());
-    // dispatch(rotateFalse());
-    // dispatch(fiveCreditsFalse());
     dispatch(deal());
   };
 
@@ -138,7 +112,7 @@ const LandscapeDrawn = ({
           <img src={`${spot.delt}`} alt="..." className="mt-2" />
         </div>
       ) : (
-        <div className={`card ${isActive ? 'is-flipped' : null}`}>
+        <div className="card">
           <div className="card__face card__face--front">
             <p>&nbsp;</p>
             <img src={spot.back} alt="..." className="mt-2 h-auto w-[99%]" />
@@ -163,7 +137,6 @@ const LandscapeDrawn = ({
       <div className="scene mt-8 w-9/12 space-y-8">
         <div>
           <ul className="grid grid-cols-5 gap-2">{drawnCards}</ul>
-          {/* {playFive && ( */}
           <div className="w-3/8 centeredB">
             <motion.p
               className="play__five bg-[#0000bf] p-2 text-center align-middle text-3xl font-bold text-red-700 md:text-4xl"
@@ -172,13 +145,11 @@ const LandscapeDrawn = ({
               transition={{
                 type: 'tween',
                 delay: 1.5,
-                // duration: 0.2,
               }}
             >
               PLAY 5 CREDITS
             </motion.p>
           </div>
-          {/* )} */}
         </div>
 
         <div>

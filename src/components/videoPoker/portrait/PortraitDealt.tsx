@@ -1,9 +1,7 @@
-// import { useEffect } from 'react';
 import { useDealCardsQuery } from '../../../api/apiSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 // actions
 import { draw } from '../../../features/dealDrawSlice';
-// import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
 import {
   holdOne,
   holdTwo,
@@ -18,9 +16,6 @@ import { motion } from 'framer-motion';
 const PortraitDealt = () => {
   const { data: mobileCards } = useDealCardsQuery();
   const dispatch = useAppDispatch();
-  // card State
-  const isActive = useAppSelector((state) => state.rotate.value);
-
   // hold State
   const holdState1 = useAppSelector((state) => state.holdCardOne.toggleHold1);
   const holdState2 = useAppSelector((state) => state.holdCardOne.toggleHold2);
@@ -28,16 +23,8 @@ const PortraitDealt = () => {
   const holdState4 = useAppSelector((state) => state.holdCardOne.toggleHold4);
   const holdState5 = useAppSelector((state) => state.holdCardOne.toggleHold5);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     dispatch(rotateTrue());
-  //   }, 400);
-  //   return () => clearTimeout(timer);
-  // }, [dispatch]);
-
   const drawHand = () => {
     dispatch(draw());
-    // dispatch(rotateFalse());
   };
 
   const POSITION = [
@@ -89,11 +76,7 @@ const PortraitDealt = () => {
 
   const dealtCardsList = POSITION.map((spot, index) => (
     <li key={index}>
-      <div
-        className={`card mx-auto mb-8 ${isActive ? 'is-flipped' : null}`}
-        // className={`relative mx-auto mb-8`}
-        // className="mx-auto mb-8"
-      >
+      <div className="card mx-auto mb-8">
         {/* Redback - Front */}
         <div
           className="absolute
@@ -164,7 +147,7 @@ const PortraitDealt = () => {
   ));
 
   return (
-    <>
+    <div>
       <ul className="my-12 grid grid-flow-col grid-rows-5 tall3x:my-14 tall4x:my-16">
         {dealtCardsList}
       </ul>
@@ -178,7 +161,7 @@ const PortraitDealt = () => {
           Draw
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default PortraitDealt;

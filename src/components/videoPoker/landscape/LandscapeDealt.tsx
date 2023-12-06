@@ -1,8 +1,7 @@
-// import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 // actions
 import { draw } from '../../../features/dealDrawSlice';
-// import { rotateFalse, rotateTrue } from '../../../features/rotateSlice';
 import {
   holdOne,
   holdTwo,
@@ -12,7 +11,6 @@ import {
 } from '../../../features/holdOneSlice';
 // card back
 import redback from '../../../assets/videoPoker/images/2B.svg';
-import { motion } from 'framer-motion';
 
 interface DrawProps {
   success: boolean;
@@ -33,8 +31,6 @@ const LanndscapeDealt = ({
   dealCards: DrawProps | undefined;
 }) => {
   const dispatch = useAppDispatch();
-  // card State
-  // const isActive = useAppSelector((state) => state.rotate.value);
   // hold State
   const holdState1 = useAppSelector((state) => state.holdCardOne.toggleHold1);
   const holdState2 = useAppSelector((state) => state.holdCardOne.toggleHold2);
@@ -42,16 +38,8 @@ const LanndscapeDealt = ({
   const holdState4 = useAppSelector((state) => state.holdCardOne.toggleHold4);
   const holdState5 = useAppSelector((state) => state.holdCardOne.toggleHold5);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     dispatch(rotateTrue());
-  //   }, 400);
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   const drawHand = () => {
     dispatch(draw());
-    // dispatch(rotateFalse());
   };
 
   const POSITION = [
@@ -93,9 +81,6 @@ const LanndscapeDealt = ({
     show: {
       opacity: 1,
       scale: 1.0,
-      // transition: {
-      //   delayChildren: 0.5,
-      // },
     },
   };
 

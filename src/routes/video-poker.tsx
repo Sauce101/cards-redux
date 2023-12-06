@@ -1,13 +1,8 @@
-/* eslint-disable no-lone-blocks */
 import { useAppSelector } from '../app/hooks';
 import { useDealCardsQuery, useShuffleCardsQuery } from '../api/apiSlice';
-// import DealCards from '../components/videoPoker/landscape/DealCards';
-// import DrawCards from '../components/videoPoker/landscape/DrawCards';
 import payout from '../assets/videoPoker/images/payout.png';
 import RetroLoading from '../components/shared/RetroLoading';
 import RetroError from '../components/shared/RetroError';
-// import MobileOne from '../components/videoPoker/portrait/MobileOne';
-// import MobileTwo from '../components/videoPoker/portrait/MobileTwo';
 import LanndscapeDealt from '../components/videoPoker/landscape/LandscapeDealt';
 import LandscapeDrawn from '../components/videoPoker/landscape/LandscapeDrawn';
 import PortraitDealt from '../components/videoPoker/portrait/PortraitDealt';
