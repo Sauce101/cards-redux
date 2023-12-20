@@ -74,9 +74,9 @@ const Dashboard = () => {
         <Footer />
       </div>
       {/* Landscape */}
-      <div className="flex-col-2 my-auto flex justify-evenly text-white portrait:hidden">
+      <div className="flex-col-2 my-auto flex w-4/5 justify-evenly gap-8 text-white portrait:hidden">
         <motion.div
-          className="mx-auto w-2/5"
+          className="mx-auto w-3/5"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -107,7 +107,7 @@ const Dashboard = () => {
           </div>
         </motion.div>
         <motion.div
-          className="mx-auto w-2/5"
+          className="mx-auto w-3/5"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
