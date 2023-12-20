@@ -4,14 +4,14 @@ import { deckOfCardsApi } from '../api/apiSlice';
 import { blackjackApi } from '../api/blackjackSlice';
 import dealDrawReducer from '../features/dealDrawSlice';
 import holdCardOneReducer from '../features/holdOneSlice';
-import rotateReducer from '../features/rotateSlice';
+// import rotateReducer from '../features/rotateSlice';
 import blackjackReducer from '../features/blackjack/blackjackSlice';
 
 export const store = configureStore({
   reducer: {
     dealDraw: dealDrawReducer,
     holdCardOne: holdCardOneReducer,
-    rotate: rotateReducer,
+    // rotate: rotateReducer,
     blackjack: blackjackReducer,
     // Add the generated reducer as a specific top-level slice
     [deckOfCardsApi.reducerPath]: deckOfCardsApi.reducer,

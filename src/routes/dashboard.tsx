@@ -19,11 +19,11 @@ const Dashboard = () => {
             duration: 0.7,
           }}
         >
-          <Link to="blackjack">
-            <img src={blackjack} alt="blackjack" />
-            <div className="flex justify-between bg-emerald-600 px-4 py-1">
-              <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
-              <div className="my-auto">
+          <img src={blackjack} alt="blackjack" />
+          <div className="flex justify-between bg-emerald-600 px-4 py-1">
+            <h2 className="tall:text-lg tall2x:text-3xl">Blackjack</h2>
+            <div className="my-auto">
+              <Link to="blackjack">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -36,9 +36,9 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </motion.div>
         <motion.div
           className="mx-auto w-4/5"
@@ -50,11 +50,11 @@ const Dashboard = () => {
             duration: 0.7,
           }}
         >
-          <Link to="video-poker">
-            <img src={videoPoker} alt="blackjack" />
-            <div className="flex justify-between bg-blue-600 px-4 py-1">
-              <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
-              <div className="my-auto">
+          <img src={videoPoker} alt="blackjack" />
+          <div className="flex justify-between bg-blue-600 px-4 py-1">
+            <h2 className="tall:text-lg tall2x:text-3xl">Video Poker</h2>
+            <div className="my-auto">
+              <Link to="video-poker">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -67,9 +67,9 @@ const Dashboard = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </motion.div>
         <Footer />
       </div>
