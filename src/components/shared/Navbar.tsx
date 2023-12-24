@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 type Active = {
   isActive: boolean;
@@ -7,6 +8,9 @@ type Active = {
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const ref = useOutsideClick(() => {
+    setNavbarOpen(false);
+  });
 
   const closeMenu = () => {
     setNavbarOpen(false);
@@ -54,6 +58,7 @@ export default function Navbar() {
           </button>
         </div>
         <div
+          ref={ref}
           className={`flex-grow items-center md:flex
             ${navbarOpen ? 'flex' : 'hidden'}`}
           id="example-navbar-danger"
