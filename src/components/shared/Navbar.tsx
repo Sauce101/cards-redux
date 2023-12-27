@@ -27,8 +27,11 @@ export default function Navbar() {
 
   return (
     // <nav className="fixed left-0 right-0 top-0 z-50 bg-stone-600 px-2">
-    <nav className="sticky  top-0 z-50 -mb-[45.25px] bg-stone-600 px-2">
-      <div className="mx-auto flex flex-wrap items-center justify-between px-4">
+    <nav className="sticky top-0 z-50 -mb-[45.25px] bg-stone-600 px-2">
+      <div
+        ref={ref}
+        className="mx-auto flex flex-wrap items-center justify-between px-4"
+      >
         <div className="relative flex w-full justify-between md:block md:w-auto lg:static lg:justify-start">
           <NavLink
             className="mr-4 inline-block whitespace-nowrap py-2 text-lg font-bold uppercase leading-relaxed text-white"
@@ -58,7 +61,6 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          ref={ref}
           className={`flex-grow items-center md:flex
             ${navbarOpen ? 'flex' : 'hidden'}`}
           id="example-navbar-danger"
